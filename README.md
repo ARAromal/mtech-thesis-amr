@@ -25,7 +25,7 @@ To run this project on your local machine:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/YOUR_USERNAME/mtech-thesis-amr.git](https://github.com/YOUR_USERNAME/mtech-thesis-amr.git)
+    git clone [https://github.com/ARAromal/mtech-thesis-amr.git](https://github.com/ARAromal/mtech-thesis-amr.git)
     cd mtech-thesis-amr
     ```
 
