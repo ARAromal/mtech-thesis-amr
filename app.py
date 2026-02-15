@@ -16,10 +16,10 @@ def load_resources():
         return None, None, "Model file 'final_thesis_model.h5' not found."
     model = tf.keras.models.load_model('final_thesis_model.h5')
     
-    if not os.path.exists('dataset.csv'):
-        return None, None, "Dataset file 'dataset.csv' not found."
-    df = pd.read_csv("dataset.csv")
-    df = df.dropna(subset=['Sequence'])
+    #if not os.path.exists('dataset.csv'):
+        #return None, None, "Dataset file 'dataset.csv' not found."
+    #df = pd.read_csv("dataset.csv")
+    #df = df.dropna(subset=['Sequence'])
     
     tokenizer = Tokenizer(char_level=True)
     tokenizer.fit_on_texts(df['Sequence'])
