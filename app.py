@@ -5,16 +5,12 @@ import numpy as np
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import os
+import pickle
 
 # --- PAGE CONFIGURATION ---
 st.set_page_config(page_title="Beta-Lactamase Predictor", page_icon="🧬", layout="centered")
 
 # --- 1. SETUP & LOADING ---
-@st.cache_resource
-import pickle
-import os
-
-# ... keep your imports ...
 
 @st.cache_resource
 def load_resources():
