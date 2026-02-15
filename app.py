@@ -11,19 +11,25 @@ st.set_page_config(page_title="Beta-Lactamase Predictor", page_icon="🧬", layo
 
 # --- 1. SETUP & LOADING ---
 @st.cache_resource
+import pickle
+import os
+
+# ... keep your imports ...
+
+@st.cache_resource
 def load_resources():
+    # 1. Load Model
     if not os.path.exists('final_thesis_model.h5'):
         return None, None, "Model file 'final_thesis_model.h5' not found."
     model = tf.keras.models.load_model('final_thesis_model.h5')
+
+    # 2. Load Tokenizer (The Fix)
+    if not os.path.exists('tokenizer.pickle'):
+        return None, None, "Tokenizer file 'tokenizer.pickle' not found. Please upload it."
     
-    #if not os.path.exists('dataset.csv'):
-        #return None, None, "Dataset file 'dataset.csv' not found."
-    #df = pd.read_csv("dataset.csv")
-    #df = df.dropna(subset=['Sequence'])
-    
-    #tokenizer = Tokenizer(char_level=True)
-    #tokenizer.fit_on_texts(df['Sequence'])
-    
+    with open('tokenizer.pickle', 'rb') as handle:
+        tokenizer = pickle.load(handle)
+
     return model, tokenizer, None
 
 model, tokenizer, error_msg = load_resources()
