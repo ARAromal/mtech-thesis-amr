@@ -21,8 +21,8 @@ def load_resources():
     #df = pd.read_csv("dataset.csv")
     #df = df.dropna(subset=['Sequence'])
     
-    tokenizer = Tokenizer(char_level=True)
-    tokenizer.fit_on_texts(df['Sequence'])
+    #tokenizer = Tokenizer(char_level=True)
+    #tokenizer.fit_on_texts(df['Sequence'])
     
     return model, tokenizer, None
 
